@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,500;1,600&family=Playfair+Display:wght@400;500;600;700;900&display=swap");
+
+/* Variables */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --montserrat: "Montserrat", sans-serif;
+  --playfair: "Playfair Display", serif;
+  --color-blue: #0077b6;
+  --color-white: rgba(255, 255, 255, 0.822);
+  --light-blue: #b7c9e23b;
+}
+
+html {
+  font-size: 62.5%; /* 1REM = 10px */
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--playfair);
+}
+h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+p,
+li,
+a {
+  font-size: 1.8rem;
+  font-family: var(--montserrat);
+}
+
+/* Navbar */
+
+header {
+  background-color: var(--color-blue);
+  height: 100vh;
+}
+
+.nav {
+  display: grid;
+
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 8rem 1fr;
+
+  align-content: center;
+}
+.nav-list {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-self: flex-end;
+  margin-right: 3rem;
+  align-items: center;
+}
+
+.nav-list li {
+  margin-right: 6rem;
+  list-style-type: none;
+}
+.nav-link {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--color-blue);
+  background-color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+}
+
+.name {
+  font-size: 2.7rem;
+  letter-spacing: 0.3rem;
+  padding-left: 2rem;
+  color: var(--color-white);
+  font-weight: 800;
+
+  align-self: center;
+}
+
+.showcase {
+  height: calc(100% - 8rem);
+  align-content: center;
+  display: grid;
+  grid-template-areas:
+    ". header ."
+    ".paragraph .";
+  grid-template-columns: 1fr minmax(min-content, 60rem) 1fr;
+
+  grid-gap: 4rem;
+}
+
+h1.title {
+  grid-area: header;
+  text-align: left;
+  font-size: 10rem;
+  color: var(--color-white);
+}
+
+p.description {
+  grid-area: paragraph;
+  color: white;
+  line-height: 3rem;
+}
+
+p.description strong {
+  color: black;
+}
+main {
+  background-color: var(--light-blue);
+}
+
+.about-me {
+  width: 60rem;
+  margin: 0 auto;
+}
+
+.about-me__title {
+  text-align: center;
+  margin: 2rem 0rem;
+}
+
+.about-me__paragraph {
+  margin-bottom: 2rem;
+}
+
+.skills ul {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+.skills ul li {
+  padding: 0.3rem 0rem;
+}
+
+.border {
+  border-top: 1rem solid #001632;
+}
+
+.portfolio {
+  background-color: #e39ff6;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.portfolio h2 {
+  margin-top: 2rem;
+}
+
+.projects {
+  padding: 5rem 0rem;
+  text-align: left;
+
+  display: grid;
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, minmax(20rem, 28rem));
+  grid-gap: 3rem;
+  justify-content: space-around;
+}
+
+.project {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border: 6px solid #710193;
+}
+
+.project h3 {
+  font-size: 3rem;
+  margin: 2rem 0rem;
+}
+.project p {
+  margin-bottom: 2rem;
+}
+
+.read-more,
+.git-link {
+  display: block;
+  text-align: center;
+}
+
+.read-more {
+  padding: 0.8rem 0rem;
+  background-color: #710193;
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+  border-radius: 5px;
+  color: white;
+}
+.git-link {
+  font-size: 1.3rem;
+  color: #710193;
+}
+
+.experience {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.experience h2 {
+  margin-top: 2rem;
+}
+
+.jobs {
+  max-width: 60rem;
+  text-align: left;
+}
+.jobs p {
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: #001632;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  header {
+    height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+    text-align: center;
+  }
+  .nav-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin-right: 0rem;
+  }
+
+  .nav-list li {
+    margin-right: 0rem;
+    background-color: grey;
+    height: 4.2rem;
+    display: grid;
+    align-content: center;
+  }
+  .nav-link {
+    border-radius: 0px;
+  }
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.644);
+  }
+
+  .name {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+  .nav-list li {
+    height: 4.23rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .read-more,
+  .git-link {
+    display: block;
+    text-align: center;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 35%;
+  }
+  .nav-list li {
+    height: 4.17rem;
+  }
+}
